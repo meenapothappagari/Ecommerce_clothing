@@ -31,7 +31,7 @@
     color: #000;
 }
 
-.navbar-search {
+/* .navbar-search {
     position: relative;
     display: flex;
     align-items: center;
@@ -41,11 +41,49 @@
 
 .navbar-search input {
     padding: 0.6rem 4rem 0.4rem 1rem;
-    
     border-radius: 25px;
     border: 2px solid #0a0a0a;
-}
+} */
 
+
+/* Navbar.css */
+
+.navbar-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  .navbar-search input[type="text"] {
+    width: 200px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  .navbar-search input[type="text"]:focus {
+    width: 250px;
+    border-color: #007bff;
+  }
+  
+  .navbar-search button.search-icon {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #00ff2f;
+  }
+  
+  .navbar-search button.search-icon:focus {
+    outline: none;
+  }
+  
 .search-icon {
     position: absolute;
     right: 0rem;
@@ -108,18 +146,88 @@
 
 .modal-content {
     background-color: #fefefe;
-    padding: 20px;
+    padding: 100px;
     border: 1px solid #888;
     width: 300px;
     border-radius: 8px;
     position: relative;
 }
 
+/* LoginSignup.css */
+
+/* Container for forms */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Form styling */
+  form {
+    width: 100%;
+  }
+  
+  /* Common input styling */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Input focus styling */
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Placeholder styling */
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Button styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover styling */
+  button:hover {
+    background-color: #c8ddf4;
+  }
+  
+  /* Heading styling */
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+
 .close {
     color: #aaa;
     position: absolute;
     top: 10px;
-    right: 15px;
+    right: 45px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;

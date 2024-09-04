@@ -1,50 +1,25 @@
 
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
-// import { initializeApp } from "firebase/app";
-// import { getAuth, GoogleAuthProvider } from "firebase/auth";
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyDuan1a25b1bjjrqbaPwd1B_ob70KgC1jY",
-//     authDomain: "weather-app-4e236.firebaseapp.com",
-//     projectId: "weather-app-4e236",
-//     storageBucket: "weather-app-4e236.appspot.com",
-//     messagingSenderId: "377793860215",
-//     appId: "1:377793860215:web:8c72730b70b3346af52c72",
-//     measurementId: "G-XX59LZJSGP"
-// };
-
-// const app = initializeApp(firebaseConfig);
-
-// const auth = getAuth(app);
-// const googleProvider = new GoogleAuthProvider();
-
-// export { auth, googleProvider };
-
-
-// src/components/firebase.jsx
-
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-
-// Your Firebase configuration
+// Your web app's Firebase configuration
 const firebaseConfig = {
-        apiKey: "AIzaSyDuan1a25b1bjjrqbaPwd1B_ob70KgC1jY",
-    authDomain: "weather-app-4e236.firebaseapp.com",
-    projectId: "weather-app-4e236",
-    storageBucket: "weather-app-4e236.appspot.com",
-    messagingSenderId: "377793860215",
-    appId: "1:377793860215:web:8c72730b70b3346af52c72",
-    measurementId: "G-XX59LZJSGP"
+    apiKey: "AIzaSyBg8WoY1UALvFGOQJVEYo0d0jyLMIOvhtY",
+    authDomain: "ecommorce-83372.firebaseapp.com",
+    projectId: "ecommorce-83372",
+    storageBucket: "ecommorce-83372.appspot.com",
+    messagingSenderId: "535277684883",
+    appId: "1:535277684883:web:c662e55ddb0e2ca1c9e566",
+    measurementId: "G-MS3FGZE3G7"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Get authentication and Google provider instances
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-// Export auth, googleProvider, and signInWithPopup
 export { auth, googleProvider, signInWithPopup };
+
+
 
 
