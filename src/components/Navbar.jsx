@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { auth, googleProvider, signInWithPopup } from './firebase'; // Import Firebase auth and Google provider
 
 const Navbar = ({ onSearch }) => {
@@ -81,11 +82,17 @@ const Navbar = ({ onSearch }) => {
         {/* Add your logo here */}
       </div>
       <ul className="navbar-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/shop">Shop</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/category/men">Men</Link></li>
+        <li><Link to="/category/women">Women</Link></li>
+        <li><Link to="/category/children">Children</Link></li>
       </ul>
+      {/* <ul className="navbar-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop">men</a></li>
+        <li><a href="/about">women</a></li>
+        <li><a href="/contact">Children</a></li>
+      </ul> */}
       <div className="navbar-search">
         <form onSubmit={handleSearchSubmit}>
           <input
@@ -97,9 +104,9 @@ const Navbar = ({ onSearch }) => {
           <button type="submit" className="search-icon">🔍</button>
         </form>
       </div>
-      <div className="navbar-icons">
+      {/* <div className="navbar-icons">
         <a href="#cart" className="icon">🛒Cart</a>
-      </div>
+      </div> */}
       <div className="navbar-auth">
         <button className="login-button" onClick={() => setIsLoginOpen(true)}>Login</button>
         <button className="signup-button" onClick={() => setIsSignupOpen(true)}>Sign Up</button>
