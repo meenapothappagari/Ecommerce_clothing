@@ -59,7 +59,11 @@
 /* Product List Grid Layout */
 .product-list {
   display: grid;
+<<<<<<< HEAD
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Adjust minimum size of grid items */
+=======
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive grid for all screen sizes */
+>>>>>>> 31bb7e0789669f578e4e26272821d22dcb91876c
   gap: 20px;
   padding: 20px;
   background-color: #f2f4f5;
