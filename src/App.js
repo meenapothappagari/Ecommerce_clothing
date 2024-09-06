@@ -143,6 +143,11 @@ function App() {
             </div>
           </div>
         </div>
+        <div className='photo'>
+          <img style={{ width: '680px', height: '500px' }} src="https://img.freepik.com/free-photo/portrait-smiling-beautiful-girl-her-handsome-boyfriend-laughing_158538-4885.jpg?w=826&t=st=1725597393~exp=1725597993~hmac=a5f0a6e6ef3d97de80b1d21b9578736c84e78f10637b4a8cbd7fbc527591cdc5" />
+          <img src="https://img.freepik.com/premium-photo/women-beautiful-fashion-dress_953724-4189.jpg?size=626&ext=jpg&ga=GA1.1.814101879.1718377277&semt=ais_hybrid" />
+          <img src="https://img.freepik.com/premium-photo/two-children-wearing-pajamas-with-word-fruit-them_1276068-11604.jpg?size=626&ext=jpg&ga=GA1.1.814101879.1718377277&semt=ais_hybrid"/>
+        </div>
         {/* Routing for product categories */}
         <Routes>
           {/* Home Route: Display all products */}
@@ -215,7 +220,7 @@ function ProductListing({ products, addToCart, removeFromCart }) {
             <img
               src={JSON.parse(product.image)[0]}
               alt={product.product_name}
-              style={{ width: '200px', height: 'auto' }}
+              // style={{ width: '200px', height: 'auto' }}
             />
             <button onClick={addToCart}>Add to Cart</button>
             <button onClick={removeFromCart}>Remove from Cart</button>
