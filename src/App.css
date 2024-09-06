@@ -5,56 +5,6 @@
 }
 
 /* Fashion section */
-.fashion {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  letter-spacing: 1px;
-  font-size: 23px;
-  margin-left: 15px;
-  margin-right: 15px;
-  flex-wrap: wrap; /* Allows elements to wrap on smaller screens */
-}
-
-.fashion span {
-  color: rgb(255, 140, 0);
-}
-
-.fashion h1 {
-  font-weight: 800;
-  font-size: 3.8rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.fashion p {
-  font-size: 15px;
-  color: rgb(1, 80, 117);
-}
-
-.fashion button {
-  border-radius: 30px;
-  cursor: pointer;
-  padding: 18px;
-}
-
-.btn {
-  display: flex;
-  gap: 12px;
-}
-
-.btn1 {
-  border: 1px solid #000;
-  background-color: #fff;
-  color: #000;
-}
-
-.fashion img {
-  width: 150px; /* Increased the size for better visibility */
-  height: 150px;
-  border-radius: 50px;
-  margin-right: 10%; /* Adjusted margin for better alignment */
-  margin-bottom: 3%;
-}
 
 /* Product List Grid Layout */
 .product-list {
