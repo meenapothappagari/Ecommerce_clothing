@@ -143,6 +143,7 @@ function App() {
             </div>
           </div>
         </div>
+        
         {/* Routing for product categories */}
         <Routes>
           {/* Home Route: Display all products */}
@@ -215,7 +216,7 @@ function ProductListing({ products, addToCart, removeFromCart }) {
             <img
               src={JSON.parse(product.image)[0]}
               alt={product.product_name}
-              style={{ width: '200px', height: 'auto' }}
+              // style={{ width: '200px', height: 'auto' }}
             />
             <button onClick={addToCart}>Add to Cart</button>
             <button onClick={removeFromCart}>Remove from Cart</button>
