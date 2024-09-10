@@ -1,0 +1,63 @@
+/* LoginPage.css */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  .login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  .login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .google-signin-button {
+    margin-top: 10px;
+    background-color: #db4437;
+  }
+  
+  .login-box p {
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .login-box {
+      padding: 30px;
+      max-width: 300px;
+    }
+  
+    .login-box h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

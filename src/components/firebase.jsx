@@ -1,6 +1,34 @@
 
+// // import { initializeApp } from 'firebase/app';
+// // // import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+// // // import { getAuth, signInWithPopup, signOut } from "firebase/auth";
+// // import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
+// // Correct imports
+// import { initializeApp } from 'firebase/app';
+// import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+
+
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+    // apiKey: "AIzaSyBg8WoY1UALvFGOQJVEYo0d0jyLMIOvhtY",
+    // authDomain: "ecommorce-83372.firebaseapp.com",
+    // projectId: "ecommorce-83372",
+    // storageBucket: "ecommorce-83372.appspot.com",
+    // messagingSenderId: "535277684883",
+    // appId: "1:535277684883:web:c662e55ddb0e2ca1c9e566",
+    // measurementId: "G-MS3FGZE3G7"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth(app);
+// const googleProvider = new GoogleAuthProvider();
+
+// // export { auth, googleProvider, signInWithPopup };
+// export { auth, googleProvider };
+
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithPopup,signOut } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,8 +46,4 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-export { auth, googleProvider, signInWithPopup };
-
-
-
-
+export { auth, googleProvider, signInWithPopup,signOut };

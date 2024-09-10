@@ -2,14 +2,13 @@
 .App {
   font-family: 'Arial', sans-serif;
   padding: 20px;
+  overflow-x: hidden;
 }
-
-/* Fashion section */
 
 /* Product List Grid Layout */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive grid for all screen sizes */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Default grid for larger screens */
   gap: 20px;
   padding: 20px;
   background-color: #f2f4f5;
@@ -62,67 +61,74 @@
   color: #000;
 }
 
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-  .fashion {
-    flex-direction: column; /* Stacks the content vertically on small screens */
-    text-align: center;
-  }
+/* Responsive Grid Adjustments */
 
-  .fashion img {
-    width: 100px;
-    height: 100px;
-    margin-right: 0;
-  }
-
+/* Extra Large Screens (Desktops) */
+@media screen and (min-width: 1200px) {
   .product-list {
-    grid-template-columns: 1fr; /* Single column layout for small screens */
-  }
-
-  .photo {
-    display: flex;
-    flex-direction: column; /* Stack images vertically on mobile */
-    align-items: center;
-  }
-
-  .photo img {
-    width: 80%;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 4-5 columns depending on screen size */
   }
 }
 
-/* Photo Section */
-.photo {
-  display: flex;
-  justify-content: space-evenly;
-  /* padding:90px 90px 100px 100px; */
-  padding-right: 100px;
-  padding-left: 100px;
-  align-items: center;
-  margin: 30px 0;
-  gap: 25px;
+/* Large Screens (Laptops and Desktops) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 3-4 columns */
+  }
 }
 
-.photo img {
-  width: 400px; /* Adjust size */
-  height: 500px;
-  margin-right: 10px;
-  border-radius: 20px;
+/* Medium Screens (Tablets and Small Laptops) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2-3 columns */
+  }
   
-}
+  .product-item img {
+    max-width: 120px; /* Smaller image size on medium screens */
+    height: 120px;
+  }
 
-
-/* Ensure the product list maintains a good layout on all screens */
-@media (max-width: 1024px) {
-  .product-list {
-    grid-template-columns: repeat(2, 1fr); /* Two-column layout for tablets */
+  .product-item h3 {
+    font-size: 16px; /* Slightly smaller text for medium screens */
   }
 }
 
-@media (max-width: 600px) {
+/* Small Screens (Large Phones and Small Tablets) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
   .product-list {
-    grid-template-columns: 1fr; /* Single-column layout for small screens */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 1-2 columns */
+  }
+
+  .product-item img {
+    max-width: 100px; /* Adjust image size for small screens */
+    height: 100px;
+  }
+
+  .product-item h3 {
+    font-size: 14px; /* Smaller text for small screens */
+  }
+
+  .product-item p {
+    font-size: 12px; /* Smaller description text */
   }
 }
 
+/* Extra Small Screens (Mobile Phones) */
+@media screen and (max-width: 575px) {
+  .product-list {
+    grid-template-columns: 1fr; /* Single column layout for mobile screens */
+  }
+
+  .product-item img {
+    max-width: 80px; /* Smaller image for mobile phones */
+    height: 80px;
+  }
+
+  .product-item h3 {
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+  .product-item p {
+    font-size: 12px; /* Smaller text for mobile */
+  }
+}
