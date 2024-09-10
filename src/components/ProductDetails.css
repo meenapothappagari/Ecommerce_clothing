@@ -140,3 +140,27 @@ p {
     font-size: 14px; /* Smaller text size for mobile */
   }
 }
+
+
+.product-details {
+  padding: 16px;
+}
+
+.product-details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-details h2 {
+  margin-top: 0;
+}
+
+.product-details p {
+  margin: 8px 0;
+}
+
+.product-details ul {
+  list-style-type: disc;
+  margin: 8px 0 0 20px;
+}

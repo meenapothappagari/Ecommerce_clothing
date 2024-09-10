@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -11,7 +10,7 @@ import Fashion from './components/Fashion';
 import BestSellers from './components/BestSellers';
 import NewCollection from './components/NewCollection';
 import ProductDetails from './components/ProductDetails';
-// import SearchResultsPage from './components/SearchResultsPage';
+import SearchResultsPage from './components/SearchResultsPage';
 
 
 import { useNavigate } from 'react-router-dom';
@@ -43,19 +42,28 @@ function App() {
     fetchProducts();
   }, [category]);
 
+  // const handleSearch = (query) => {
+  //   // setSearchQuery(query);
+  //   const filtered = products.filter(product =>
+  //     product.product_name.toLowerCase().includes(query.toLowerCase())
+  //   );
+  //   setFilteredProducts(filtered);
+  // };
+
   const handleSearch = (query) => {
-    // setSearchQuery(query);
     const filtered = products.filter(product =>
-      product.product_name.toLowerCase().includes(query.toLowerCase())
+      product.product_name.toLowerCase().includes(query.toLowerCase()) ||
+      product.product_category_tree.some(category => category.toLowerCase().includes(query.toLowerCase()))
     );
     setFilteredProducts(filtered);
   };
+  
 
   return (
     <Router>
       <div className="App">
         {/* <Navbar cartCount={cartCount} /> */}
-        <Navbar cartCount={cartCount} onSearch={handleSearch} />
+        <Navbar cartCount={cartCount} onSearch={handleSearch} products={products}/>
       
 
         <Routes>
@@ -83,9 +91,12 @@ function App() {
 
 
           <Route path="/" element={<ProductListing products={filteredProducts} />} />
+          {/* <Route path="/product-details" element={<ProductDetails cartCount={cartCount} setCartCount={setCartCount} />} /> */}
           <Route path="/product-details" element={<ProductDetails cartCount={cartCount} setCartCount={setCartCount} />} />
+
+          <Route path="/search-results" element={<SearchResultsPage ProductDetails/>} />
           {/* <Route path="/search" element={<SearchResultsPage filteredProducts={filteredProducts} />} /> */}
-          <Route
+          {/* <Route
             path="/"
             element={
               <>
@@ -96,7 +107,7 @@ function App() {
             }
 
 
-          />
+          /> */}
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
 
