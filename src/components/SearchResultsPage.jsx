@@ -118,29 +118,45 @@ const SearchResultsPage = () => {
   };
 
   return (
-    <div className="search-results-page">
-      <h2>Search Results for "{query}"</h2>
-      <div className="search-results-container">
-        {products.length > 0 ? (
-          products.map((product) => (
-            <div key={product._id} className="search-result-item">
-              <img
-                src={JSON.parse(product.image)[0]}
-                alt={product.product_name}
-                onClick={() => handleImageClick(product)}
-                style={{ cursor: 'pointer' }}
-              />
-              <h3>{product.product_name}</h3>
-              <p><strong>Retail Price:</strong> ₹{product.retail_price}</p>
-              <p><strong>Discounted Price:</strong> ₹{product.discounted_price}</p>
-            </div>
-          ))
-        ) : (
-          <p>No products found.</p>
-        )}
-      </div>
+//     <div className="search-results-page">
+//       <h2>Search Results for "{query}"</h2>
+//       <div className="search-results-container">
+//         {products.length > 0 ? (
+//           products.map((product) => (
+//             <div key={product._id} className="search-result-item">
+//               <img
+//                 src={JSON.parse(product.image)[0]}
+//                 alt={product.product_name}
+//                 onClick={() => handleImageClick(product)}
+//                 style={{ cursor: 'pointer' }}
+//               />
+//               <h3>{product.product_name}</h3>
+//               <p><strong>Retail Price:</strong> ₹{product.retail_price}</p>
+//               <p><strong>Discounted Price:</strong> ₹{product.discounted_price}</p>
+//             </div>
+//           ))
+//         ) : (
+//           <p>No products found.</p>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+<div className="search-results-container">
+  {products.map((product) => (
+    <div key={product._id} className="search-result-item">
+      <img
+        src={JSON.parse(product.image)[0]}
+        alt={product.product_name}
+        onClick={() => handleImageClick(product)}
+        style={{ cursor: 'pointer' }}
+      />
+      <h3>{product.product_name}</h3>
+      <p><strong>Retail Price:</strong> ₹{product.retail_price}</p>
+      <p><strong>Discounted Price:</strong> ₹{product.discounted_price}</p>
     </div>
+  ))}
+</div>
   );
 };
-
 export default SearchResultsPage;

@@ -57,14 +57,14 @@ function App() {
     );
     setFilteredProducts(filtered);
   };
-  
+
 
   return (
     <Router>
       <div className="App">
         {/* <Navbar cartCount={cartCount} /> */}
-        <Navbar cartCount={cartCount} onSearch={handleSearch} products={products}/>
-      
+        <Navbar cartCount={cartCount} onSearch={handleSearch} products={products} />
+
 
         <Routes>
           {/* <Route path="/product-details" element={<ProductDetails />} /> */}
@@ -94,7 +94,7 @@ function App() {
           {/* <Route path="/product-details" element={<ProductDetails cartCount={cartCount} setCartCount={setCartCount} />} /> */}
           <Route path="/product-details" element={<ProductDetails cartCount={cartCount} setCartCount={setCartCount} />} />
 
-          <Route path="/search-results" element={<SearchResultsPage ProductDetails/>} />
+          <Route path="/search-results" element={<SearchResultsPage ProductDetails />} />
           {/* <Route path="/search" element={<SearchResultsPage filteredProducts={filteredProducts} />} /> */}
           {/* <Route
             path="/"
@@ -148,10 +148,10 @@ function App() {
             path="/category/stationery"
             element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Stationery'))} />}
           />
-          {/* <Route
-                    path="/category/Sports & Fitness"
-                    element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Sports & Fitness'))} addToCart={addToCart} removeFromCart={removeFromCart} />}
-                  /> */}
+          <Route
+            path="/category/Sports & Fitness"
+            element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Sports & Fitness'))}  />}
+          />
           <Route
             path="/category/Jewellery"
             element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Jewellery'))} />}
@@ -186,8 +186,8 @@ function ProductListing({ products, addToCart, removeFromCart }) {
               onClick={() => goToProductDetails(product)}
               style={{ cursor: 'pointer' }}
             />
-            <button onClick={addToCart}>Add to Cart</button>
-            <button onClick={removeFromCart}>Remove from Cart</button>
+            {/* <button onClick={addToCart}>Add to Cart</button>
+            <button onClick={removeFromCart}>Remove from Cart</button> */}
           </div>
         ))
       ) : (

@@ -114,7 +114,7 @@
 //   const [suggestions, setSuggestions] = useState([]);
 //   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 //   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  
+
 //   const navigate = useNavigate();
 
 //   useEffect(() => {
@@ -139,7 +139,7 @@
 //         const categoryMatches = product.product_category_tree.some(category => category.toLowerCase().includes(lowerCaseQuery));
 //         return nameMatches || categoryMatches;
 //       });
-      
+
 //       setSuggestions(results);
 //     } else {
 //       setSuggestions([]);
@@ -276,21 +276,33 @@ const Navbar = ({ cartCount, onSearch }) => {
 
   return (
     <nav className="navbar">
+      {/* <div className="navbar-logo">
+        // <img className="img" src="https://d4l6e04z43qjx.cloudfront.net/img/fashion/fashion-logo.png" alt="logo" />
+        // <h4>KMR Fashions</h4>
+      </div> */}
       <div className="navbar-logo">
-        <img className="img" src="https://d4l6e04z43qjx.cloudfront.net/img/fashion/fashion-logo.png" alt="logo" />
-        <h4>KMR Fashions</h4>
+      <Link to="/">
+        <img
+          className="img"
+          src="https://d4l6e04z43qjx.cloudfront.net/img/fashion/fashion-logo.png"
+          alt="KMR Fashions Logo"
+          style={{ cursor: 'pointer' }}
+        />
+      </Link>
+      <h4>KMR Fashions</h4>
       </div>
 
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
+        {/* <li><Link to="/">Home</Link></li> */}
         <li><Link to="/category/men">Men</Link></li>
         <li><Link to="/category/women">Women</Link></li>
         <li><Link to="/category/children">Children</Link></li>
+        <li><Link to="/category/Sports & Fitness">Sports & Fitness</Link></li>
       </ul>
 
       <div className="navbar-icons">
 
-      <div className="search-container">
+        <div className="search-container">
           <FaSearch size={24} className="search-icon" onClick={toggleSearch} />
           {isSearchOpen && (
             <form onSubmit={handleSearchSubmit} className="search-form">
@@ -324,7 +336,7 @@ const Navbar = ({ cartCount, onSearch }) => {
           </ul>
         )}
 
-        
+
         <div className="cart-icon">
           <FaShoppingCart size={24} />
           <span className="cart-count">{cartCount}</span>
