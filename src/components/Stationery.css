@@ -104,6 +104,7 @@
   
   .star {
     color: gold; /* Set star color to gold */
+    
     margin: 0 2px;
     font-size: 1.5em; /* Adjust size as needed */
   }

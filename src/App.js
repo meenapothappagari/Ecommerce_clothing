@@ -347,19 +347,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import SignupPage from './components/SignupPage';
-import LoginPage from './components/LoginPage';
-import LoginLogoutApp from './components/LoginLogoutApp'; // Import the component
 import HomePage from './components/HomePage'; // Assuming you have a HomePage component
 import './App.css';
 import axios from 'axios';
-import BestSellers from './components/BestSellers';
 import ProductDetails from './components/ProductDetails';
 import PopularCategories from './components/PopularCategories';
 import SeasonalPicks from './components/SeasonalPicks'; // Adjust the path if necessary
 import Stationery from './components/Stationery'; // Import the Stationery component
-// import ProductListing from './components/ProductListing'; // Ensure this component exists
 import { useNavigate } from 'react-router-dom';
 import WhyChooseUs from './components/WhyChooseUs';
 import OurClients from './components/OurClients';
@@ -408,8 +402,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar onSearch={handleSearch} setCategory={setCategory} />
-
+       
         <Routes>
           <Route path="/product-details" element={<ProductDetails />} />
           <Route path="*" element={<HomePage />} />
@@ -420,7 +413,6 @@ function App() {
               <>
                 <HomePage />
                 <PopularCategories setCategory={setCategory} />
-                <BestSellers products={filteredProducts} />
                 <SeasonalPicks products={products} />
                 <Stationery products={filteredProducts} />
                 <WhyChooseUs/>
@@ -432,9 +424,6 @@ function App() {
             }
           />
           
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/login-logout" element={<LoginLogoutApp />} /> {/* Add this route */}
 
           <Route
             path="/category/men"
