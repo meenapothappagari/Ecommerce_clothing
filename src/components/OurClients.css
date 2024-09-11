@@ -1,0 +1,94 @@
+
+.testimonial-section {
+    /* background-color: blue; */
+    height: 250px;
+    text-align: center;
+    margin: 50px;
+}
+
+.client-profiles {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 30px;
+    position: relative; /* Make it a positioned element to allow pseudo-element positioning */
+}
+
+ .client-profiles::before {
+    /* width: 90%; */
+    min-width: fit-content;
+    content: ''; 
+    position: absolute;
+     bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px; 
+    background-color: rgb(170, 214, 216); 
+    z-index: -5; 
+} 
+.client-profile:hover p::after,
+.client-profile:hover span::after {
+    content: '';
+    display: block;
+    width: 100%;
+    min-width: fit-content;
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(51, 122, 184); /* Color of the underline */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.client-profile {
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+    text-align: center;
+    transition: transform 0.3s, color 0.3s;
+    position: relative; /* Ensure children are positioned correctly */
+    z-index: 2; /* Make sure the images are on top of the line */
+}
+
+.client-profile img {
+    border-radius: 50%;
+    width: 53px;
+    height: 53px;
+    transition: transform 0.3s, border 0.3s;
+}
+
+.client-profile p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.client-profile span {
+    font-size: 1rem;
+    color: grey;
+}
+
+.testimonial-message {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    padding: 20px;
+    font-style: italic;
+}
+/* Add hover effect and active state styling */
+.client-profile.active,
+.client-profile:hover {
+    transform: scale(1.1); /* Slightly scale up on hover or active */
+}
+
+.client-profile.active img {
+    border: 2px solid green; /* Green border for the active image */
+    /* border-color: #b85aff; */
+
+}
+
+.client-profile.active p,
+.client-profile.active span {
+    color: green; /* Green text for the active profile */
+}

@@ -14,16 +14,10 @@
   height: 90px;
 }
 
-.navbar-links {
+.nav-links {
+  list-style: none; /* Removes dots from list items */
   display: flex;
-  list-style: none;
-  flex-wrap: wrap; /* Ensure it stays horizontal but wraps when needed */
-  gap: 1rem; /* Add some gap for spacing */
-}
-
-.navbar-links li {
-  font-size: 1.4rem;
-  font-weight: 500;
+  gap: 1rem; /* Adds spacing between links */
 }
 
 .navbar-links li a {
