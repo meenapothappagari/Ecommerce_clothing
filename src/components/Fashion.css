@@ -1,0 +1,107 @@
+.fashion {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: 1px;
+    font-size: 23px;
+    margin-left: 15px;
+    margin-right: 15px;
+    flex-wrap: wrap; /* Allows elements to wrap on smaller screens */
+  }
+  
+  .fashion span {
+    color: rgb(255, 140, 0);
+  }
+  
+  .fashion h1 {
+    font-weight: 800;
+    font-size: 3.8rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .fashion p {
+    font-size: 15px;
+    color: rgb(1, 80, 117);
+  }
+  
+  .fashion button {
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 18px;
+    width: 150px;
+  }
+  
+  .btn {
+    display: flex;
+    gap: 12px;
+    
+  }
+  
+  .btn1 {
+    border: 1px solid #000;
+    background-color: #258ff9;
+    color:white;
+  }
+  .btn2 {
+    border: 1px solid #000;
+    background-color: #f7f9fb;
+    color: #000;
+  }
+  
+  .fashion img {
+    width: 110px; /* Increased the size for better visibility */
+    height: 110px;
+    border-radius: 50px;
+    margin-right: 35%; /* Adjusted margin for better alignment */
+    margin-bottom: 3%;
+  }
+  @media (max-width: 768px) {
+    .fashion {
+      flex-direction: column; /* Stacks the content vertically on small screens */
+      text-align: center;
+    }
+  
+    .fashion img {
+      width: 100px;
+      height: 100px;
+      margin-right: 0;
+    }
+  
+    .product-list {
+      grid-template-columns: 1fr; /* Single column layout for small screens */
+    }
+  
+    .photo {
+      display: flex;
+      flex-direction: column; /* Stack images vertically on mobile */
+      align-items: center;
+    }
+  
+    .photo img {
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+  }
+  
+  /* Photo Section */
+  .photo {
+    display: flex;
+    justify-content: space-evenly;
+    /* padding:90px 90px 100px 100px; */
+    padding-right: 100px;
+    padding-left: 100px;
+    align-items: center;
+    margin: 30px 0;
+    gap: 25px;
+  }
+  
+  .photo img {
+    width: 400px; /* Adjust size */
+    height: 500px;
+    margin-right: 10px;
+    border-radius: 20px;
+    
+  }
+  
+  
