@@ -1,0 +1,80 @@
+.social-media-section {
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .social-media-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+  
+  .social-media-header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .instagram-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #262626;
+    background-color: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .instagram-link:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .instagram-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .social-media-images {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .image-wrapper {
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+    display: inline-block;
+    background-color: #ffffff; /* Background color for the border effect */
+  }
+  
+  .image-wrapper img {
+    width: calc(100% - 30px); /* Reduced to create a larger gap around the image */
+    height: calc(100% - 16px); /* Reduced to create a larger gap around the image */
+    object-fit: cover;
+    border: 2px solid blue; /* Changed to show the inner border */
+    border-radius: 5px;
+    position: absolute;
+    top: 8px; /* Adjusted offset to center the image inside the container */
+    left: 8px; /* Adjusted offset to center the image inside the container */
+    transition: border-color 0.3s ease;
+  }
+  
+  .image-wrapper:hover {
+    transform: scale(1.05);
+  }
+  
+  .image-wrapper:hover img {
+    border-color: #ff5a5f; /* Example hover color */
+  }
+  

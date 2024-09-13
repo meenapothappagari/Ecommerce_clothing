@@ -1,0 +1,110 @@
+.why-choose-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(231, 236, 236);
+    padding: 50px;
+    height: 300px;
+ 
+  }
+  
+  .choose {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .choose h1 {
+    margin: 0;
+    font-size: 2.3em; /* Adjust font size as needed */
+    color: #333; /* Adjust color as needed */
+  }
+  
+  .choosebtn {
+    background-color: #007bff; /* Adjust background color */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em; /* Adjust font size as needed */
+  }
+  
+  .choosebtn:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+  }
+  
+  .main-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribute items evenly */
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+  }
+  
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 200px; /* Flex-grow and flex-shrink with a basis */
+    margin: 10px;
+  }
+  
+  .icon {
+    font-size: 2em; /* Adjust icon size as needed */
+    color: gold; /* Gold color for the stars */
+    margin-bottom: 10px;
+    width: 60px; /* Small coin size */
+    height: 60px;
+    padding:10px;
+    border-radius: 50%; 
+    border: 2px solid rgb(245, 234, 234);
+    background-color: rgb(232, 236, 239);
+
+  }
+  
+  p {
+    margin: 0;
+    font-size: 1em;
+    color: #333; /* Adjust color as needed */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .choose {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .choosebtn {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-div {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature {
+      margin: 5px 0;
+      flex: 1 1 100%; /* Allow items to take full width */
+    }
+  
+    .icon {
+      font-size: 1.5em; /* Smaller icon size for smaller screens */
+    }
+  
+    p {
+      font-size: 0.9em; /* Smaller text for smaller screens */
+    }
+  }
+  

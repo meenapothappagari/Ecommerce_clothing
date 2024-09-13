@@ -1,0 +1,47 @@
+.popular-categories {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .popular-categories h1{
+    font-size: 40px;
+    font-weight: 600px;
+  }
+
+  
+  
+  .categories-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .category-item {
+    border: 2px solid pink;
+    border-radius: 80px;
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .category-item p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .coin-image {
+    width: 110px; /* Small coin size */
+    height: 110px;
+    border-radius: 80%; /* Makes the image circular */
+    /* object-fit: cover; Ensures the image fits the circle */
+    /* border: 2px solid #ddd; Optional: add border for visual appeal */
+    padding: 10px;
+    
+  }
+  

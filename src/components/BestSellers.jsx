@@ -105,9 +105,8 @@ function BestSellers({ products }) {
             </div>
           </div>
         ))}
-      </div>
-    </div>
+        </div>
+        </div>
   );
 }
-
 export default BestSellers;

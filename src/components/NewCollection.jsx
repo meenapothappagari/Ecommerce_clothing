@@ -55,3 +55,69 @@ function NewCollection({ products }) {
 }
 
 export default NewCollection;
+
+
+// import React from 'react';
+
+// const NewCollection = ({ products }) => {
+//   if (!products) {
+//     return <p>Loading products...</p>; // or another loading state
+//   }
+
+//   const newCollection = (products || []).filter(product => product.category === 'New');
+
+//   return (
+//     <div className="new-collection">
+//       <h2>New Collection</h2>
+//       <div className="products">
+//         {newCollection.length > 0 ? (
+//           newCollection.map(product => (
+//             <div key={product.id} className="product">
+//               <img src={product.image} alt={product.name} />
+//               <h3>{product.name}</h3>
+//               <p>₹{product.price}</p>
+//             </div>
+//           ))
+//         ) : (
+//           <p>No new collection items available</p>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default NewCollection;
+
+
+// import React from 'react';
+
+// const NewCollection = ({ products }) => {
+//   // Check if products are available
+//   if (!products || products.length === 0) {
+//     return <p>Loading products...</p>; // Or another loading state
+//   }
+
+//   // Filter products for those in the "New" category
+//   const newCollection = products.filter(product => product.category === 'New');
+
+//   return (
+//     <div className="new-collection">
+//       <h2>New Collection</h2>
+//       <div className="products">
+//         {newCollection.length > 0 ? (
+//           newCollection.map(product => (
+//             <div key={product.id} className="product">
+//               <img src={product.image} alt={product.name} />
+//               <h3>{product.name}</h3>
+//               <p>₹{product.price}</p>
+//             </div>
+//           ))
+//         ) : (
+//           <p>No new collection items available</p>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default NewCollection;
