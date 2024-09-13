@@ -1,32 +1,4 @@
-/* .product-details-container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .product-image-section, .product-info-section {
-    flex: 1;
-  }
-p{
-    font-family: black  ;
-    font-size: 20px;
- }
-  
-  .main-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  } */
-/*   
-  .product-info-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .product-info-section ul li {
-    margin-bottom: 20px;
-  } */
-  
+
   /* General Product Details Container */
 .product-details-container {
   display: flex;

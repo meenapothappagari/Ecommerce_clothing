@@ -12,7 +12,6 @@ import NewCollection from './components/NewCollection';
 import ProductDetails from './components/ProductDetails';
 import SearchResultsPage from './components/SearchResultsPage';
 
-
 import { useNavigate } from 'react-router-dom';
 
 function App() {
@@ -42,14 +41,7 @@ function App() {
     fetchProducts();
   }, [category]);
 
-  // const handleSearch = (query) => {
-  //   // setSearchQuery(query);
-  //   const filtered = products.filter(product =>
-  //     product.product_name.toLowerCase().includes(query.toLowerCase())
-  //   );
-  //   setFilteredProducts(filtered);
-  // };
-
+ 
   const handleSearch = (query) => {
     const filtered = products.filter(product =>
       product.product_name.toLowerCase().includes(query.toLowerCase()) ||
@@ -67,16 +59,7 @@ function App() {
 
 
         <Routes>
-          {/* <Route path="/product-details" element={<ProductDetails />} /> */}
-          {/* <Route 
-          path="/product-details" 
-          element={
-            <ProductDetails 
-              cartCount={cartCount} 
-              setCartCount={setCartCount} // Pass setCartCount to ProductDetails
-            />
-          } 
-        /> */}
+
           <Route
             path="/"
             element={
@@ -84,30 +67,17 @@ function App() {
                 <Fashion />
                 <BestSellers products={filteredProducts} />
                 <NewCollection products={filteredProducts} />
-                {/* <ProductListing products={filteredProducts} /> */}
               </>
             }
           />
 
 
           <Route path="/" element={<ProductListing products={filteredProducts} />} />
-          {/* <Route path="/product-details" element={<ProductDetails cartCount={cartCount} setCartCount={setCartCount} />} /> */}
+        
           <Route path="/product-details" element={<ProductDetails cartCount={cartCount} setCartCount={setCartCount} />} />
 
           <Route path="/search-results" element={<SearchResultsPage ProductDetails />} />
-          {/* <Route path="/search" element={<SearchResultsPage filteredProducts={filteredProducts} />} /> */}
-          {/* <Route
-            path="/"
-            element={
-              <>
-                <Fashion />
-                <BestSellers products={filteredProducts} />
-                <NewCollection products={filteredProducts} />
-              </>
-            }
-
-
-          /> */}
+        
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
 
@@ -156,7 +126,7 @@ function App() {
             path="/category/Jewellery"
             element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Jewellery'))} />}
           />
-          {/* Other category routes go here */}
+
         </Routes>
       </div>
     </Router>
