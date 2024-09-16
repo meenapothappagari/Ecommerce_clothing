@@ -347,3 +347,4 @@ const Navbar = ({ cartCount, onSearch }) => {
 };
 
 export default Navbar;
+/////////////////////////////////////////////////////////

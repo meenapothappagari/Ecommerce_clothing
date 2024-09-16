@@ -1,40 +1,50 @@
-/* src/components/Footer.css */
-
 /* Footer main container styling */
 .footer {
   width: 100%;
   height: 15em;
-  background-color: #00171f;
+  background-color: #0f1829;
   border-top: 5px solid transparent;
   border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><path fill="none" stroke="white" stroke-width="5" d="M10 80 Q 95 10 180 80 T 350 80" /></svg>') 30 stretch;
   color: white;
   display: flex;
   flex-direction: column;
   padding-top: 100px;
+}.footer::before {
+  content: '';
+  position: absolute;
+  top: -20px; /* Adjust this to match your design */
+  left: 0;
+  right: 0;
+  height: 40px; /* Height of the wave */
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230e0f0f" fill-opacity="1" d="M0,128L120,122.7C240,117,480,107,720,128C960,149,1200,203,1320,234.7L1440,267L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>') no-repeat top;
+  background-size: cover;
 }
+
 
 /* Flex container for footer content */
 .footer-content {
-
- 
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-   /* gap: 10px;  */
-  /* Adjust spacing between sections */ 
+  justify-content: space-evenly;
+  /* align-items: center; */
+  /* flex-wrap: wrap;  */
 }
 
-/* Footer sections */
-.footer-section {
-  flex: 1;
-  min-width: 200px; /* Ensure sections don't get too narrow */
-  /* margin-right: 30px; */
+/* Combined section for Links, Category, and Shop */
+.combined-sections {
+  display: flex;
+  gap: 140px; /* Space between the sections */
+  justify-content: center;
+  flex-wrap: wrap;
+  /* background-color:burlywood; */
+  margin-left:40px;
+}
+
+.combined-sections .footer-section {
+  min-width: 150px;
 }
 
 /* Headings for footer sections */
-.footer-section h3,
-.footer-section h4 {
+.footer-section h3 {
   margin-bottom: 10px;
 }
 
@@ -42,10 +52,9 @@
 .footer-section ul {
   list-style: none;
   padding: 0;
-  width: 80px;
+  line-height: 1.7;
 }
 
-/* List item styling for footer sections */
 .footer-section ul li {
   margin-bottom: 5px;
   cursor: pointer; /* Pointer cursor for better UX */
@@ -58,43 +67,60 @@
   margin: 0 20px;
 }
 
+
 /* Subscription form styling */
 .subscribe-form {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   align-items: flex-start;
   width: 100%; /* Full width for responsive design */
 }
 
-/* Email input field styling */
 .subscribe-form input[type='email'] {
   background-color: #ccc;
-  padding: 10px;
+  padding: 15px;
   border: none;
   margin-bottom: 10px;
-  width: 100%;
+  width: 55%;
+  border-radius:20px;
 }
 
-/* Button styling for subscription form */
 .subscribe-form button {
   background-color: blue;
   color: white;
-  padding: 10px 20px;
+  padding:  15px;
   border: none;
+  border-radius:20px;
   cursor: pointer;
-  width: 100%;
+  width: 40%;
+  margin-left:-40px;
+  /* padding-left:40px; */
 }
 
 .subscribe-form button:hover {
-  background-color: #1c1c202a;
+  background-color: #dadae62a;
 }
+.footer-section-subscribe p{
+  color:rgb(191, 190, 192);
+  padding:10px 10px;
+  line-height:1.5
+}
+.footer-section-subscribe h4{
+  font-size:18px;
+  margin:0px;
+}
+.footer-section-subscribe{
+  line-height:3.5
+}
+
 
 /* Footer bottom section styling */
 .footer-bottom {
-  background-color: rgb(1, 6, 31);
+  background-color: rgb(27, 45, 66);
   display: flex;
+  
   flex-wrap: wrap; /* Wrap content for smaller screens */
-  justify-content: center; /* Center-align on smaller screens */
+  justify-content: space-evenly; /* Center-align on smaller screens */
   align-items: center; /* Center-align items */
   gap: 10px;
   color: white;
@@ -103,13 +129,16 @@
   margin-top: 20px;
   padding-left: 10%;
 }
+.social-icons i{
+  color:white;
+}
 
 /* Social icons container styling */
-.footer-bottom .social-icons {
-  margin: 10px 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.footer-bottom .social-icons #icon {
+  font-size: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 /* Individual social icon styling */
@@ -117,11 +146,17 @@
   margin: 0 10px;
   font-size: 20px;
   cursor: pointer;
+  /* color:white; */
 }
 
 /* Adding some margin between the icons and the final text */
 .footer-bottom p:last-child {
   margin-top: 10px;
+  /* color:white; */
+}
+.footer-bottom p{
+  color:white;
+
 }
 
 /* Media queries for responsiveness */
@@ -131,10 +166,9 @@
     align-items: center; /* Center-align sections */
   }
 
-  .footer-section {
-    margin-right: 0;
-    text-align: center; /* Center-align text for better appearance on mobile */
-    margin-bottom: 20px; /* Add spacing between sections */
+  .combined-sections {
+    flex-direction: column; /* Stack links, category, and shop vertically */
+    align-items: center; /* Center-align sections */
   }
 
   .vertical-line {
@@ -160,9 +194,4 @@
   .footer-section {
     min-width: 150px; /* Reduce minimum width for very small screens */
   }
-}
-
-.client-profile-text {
-  display: flex;
-  flex-direction: column; /* Stack name above profession */
 }

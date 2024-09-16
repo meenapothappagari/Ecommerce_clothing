@@ -51,13 +51,20 @@
 .seasonal-carousel .seasonal-item {
   padding: 10px; /* Reduce padding around items */
   text-align: center;
+  display:flex;
+  flex-direction:row-reverse
+
 }
 
 .seasonal-item img {
-  width: 100%; /* Adjust to fill container */
+  width: 100%;
+   /* Adjust to fill container */
   max-width: 150px; /* Ensure images don’t exceed this width */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 10px;
+  height: auto; 
+  /* Maintain aspect ratio */
+  margin-bottom: 20px;
+
+
 }
 
 /* Media queries for responsive design */

@@ -3,8 +3,8 @@
 import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './SeasonalPicks.css';
 
 const SeasonalPicks = ({ products }) => {
@@ -13,7 +13,7 @@ const SeasonalPicks = ({ products }) => {
 
   // Filter for Jewellery category and display all products
   const sportsProducts = products.filter(
-    (product) => product.product_category_tree?.[0]?.includes('Jewellery')
+    (product) => product.product_category_tree?.[0]?.includes('Furniture')
   );
 
   // Slider settings to enable horizontal scrolling
@@ -21,7 +21,7 @@ const SeasonalPicks = ({ products }) => {
     dots: false, // Hide dots to simplify UI
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Show 4 products at a time
+    slidesToShow: 3, // Show 4 products at a time
     slidesToScroll: 1, // Scroll 1 product at a time
     arrows: true, // Enable arrows for navigation
     autoplay: false, // Disable autoplay to allow manual scrolling
@@ -42,7 +42,7 @@ const SeasonalPicks = ({ products }) => {
   return (
     <div className="seasonal-picks">
       <div className="header">
-        <h1>Seasonal Sports Picks</h1>
+        <h1>Seasonal Picks</h1>
         <p>
           Winter collection of our shop<br />
           that have been bought for interested people
@@ -53,7 +53,7 @@ const SeasonalPicks = ({ products }) => {
             <button className="prev-arrow" onClick={handlePrev}>←</button>
             <button className="next-arrow" onClick={handleNext}>→</button>
           </div>
-          <Link to="/category/Jewellery">
+          <Link to="/category/Furniture">
             <button className="view-more-button">View More</button>
           </Link>
         </div>
