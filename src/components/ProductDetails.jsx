@@ -140,7 +140,7 @@ const ProductDetails = ({ cartCount, setCartCount }) => {
   const parsedImages = JSON.parse(product.image);
 
   const addToCart = () => {
-    setCartCount(cartCount + 1);  // Increase cart count
+    setCartCount(cartCount + 1);  
   };
 
   const removeFromCart = () => {
