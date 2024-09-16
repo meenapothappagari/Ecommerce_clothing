@@ -231,5 +231,4 @@ const Navbar = ({ cartCount, onSearch }) => {
 
 // Navbar.jsx
 export default Navbar;
-
-
+/////////////////////////////////////////////////////////

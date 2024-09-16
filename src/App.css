@@ -1,17 +1,4 @@
-/* General App styles
-.App {
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
-  overflow-x: hidden;
-}
 
-/* Product List Grid Layout */
-.App {
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
-  overflow-x: hidden;
-  margin-bottom: 30px;
-}
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Default grid for larger screens */

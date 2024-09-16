@@ -170,7 +170,7 @@ const SeasonalPicks = ({ products }) => {
 
   // Filter for Jewellery category and display all products
   const sportsProducts = products.filter(
-    (product) => product.product_category_tree?.[0]?.includes('Sunglasses')
+    (product) => product.product_category_tree?.[0]?.includes('Furniture')
   );
 
   // Slider settings to enable horizontal scrolling
@@ -210,7 +210,7 @@ const SeasonalPicks = ({ products }) => {
             <button className="prev-arrow" onClick={handlePrev}>←</button>
             <button className="next-arrow" onClick={handleNext}>→</button>
           </div>
-          <Link to="/category/Sunglasses">
+          <Link to="/category/Furniture">
             <button className="view-more-button">View More</button>
           </Link>
         </div>

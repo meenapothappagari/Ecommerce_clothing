@@ -1,0 +1,74 @@
+.billing-section {
+    width: 80%;
+    margin: auto;
+  }
+  
+  h4 {
+    font-size: 1.5em;
+  }
+  
+  hr {
+    margin-bottom: 20px;
+  }
+  
+  .billing-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .billing-details, .product-details {
+    width: 45%;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .required {
+    color: red;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .product, .subtotal, .total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .payment-method {
+    margin: 20px 0;
+  }
+  
+  .razorpay-option {
+    margin-bottom: 20px;
+  }
+  
+  .pay-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pay-button:hover {
+    background-color: #0056b3;
+  }
+  
