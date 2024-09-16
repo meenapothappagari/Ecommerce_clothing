@@ -18,7 +18,7 @@
     max-width: 400px;
     text-align: center;
   }
-  
+/*   
   .login-box h2 {
     margin-bottom: 20px;
   }
@@ -60,4 +60,101 @@
       font-size: 1.5rem;
     }
   }
-  
+   */
+
+   /* Base styles */
+.form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 15px;
+}
+
+.form-page h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Mobile-friendly width */
+}
+
+.form-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container input {
+  width: 93%;
+  padding: 16px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container button:hover {
+  background-color: #555;
+}
+
+.google-signin-button {
+  background-color: #4285f4;
+}
+
+.google-signin-button:hover {
+  background-color: #357ae8;
+}
+
+.form-container p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #555;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .form-page h1 {
+    font-size: 1.75rem;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-container h2 {
+    font-size: 1.25rem;
+  }
+
+  .form-container input,
+  .form-container button {
+    font-size: 0.9rem;
+  }
+
+  .form-container p {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,122 @@
+/* Base Styles */
+.cart-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .cart-page h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .cart-item img {
+    width: 10%;
+    max-width: 80px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cart-item-details h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .cart-item-details p {
+    margin: 0;
+  }
+  
+  .cart-item-details button {
+    align-self: flex-start;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cart-item-details button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .cart-total {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cart-total h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .checkout-btn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #388e3c;
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2196f3;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .cart-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cart-item img {
+      max-width: 100%;
+    }
+  
+    .cart-item-details {
+      text-align: center;
+    }
+  
+    .checkout-btn {
+      width: 100%;
+    }
+  }
+  

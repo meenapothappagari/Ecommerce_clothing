@@ -1,6 +1,7 @@
 .popular-categories {
     text-align: center;
-    padding: 40px;
+    padding: 60px;
+    background-color: rgb(249, 255, 255);
   }
 
   .popular-categories h1{
@@ -8,7 +9,7 @@
     font-weight: 600px;
   }
 
-  
+
   
   .categories-row {
     display: flex;
@@ -18,21 +19,26 @@
   }
   
   .category-item {
-    border: 2px solid pink;
+    border: 1px solid rgba(44, 44, 44, 0.121);
     border-radius: 80px;
     padding: 10px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
     margin: 10px;
   }
-  
+  .category-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
   .category-item p {
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
+  }
+  .popular-catname{
+    font-size: 20px;
   }
   
   .coin-image {

@@ -1,94 +1,109 @@
+
 .seasonal-picks {
-  text-align: center;
-}
-
-.header {
-  display: flex;
-  justify-content: center; /* Center align header content */
-  align-items: center;
-  gap: 160px; /* Space between items in the header */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-.header p{
-  font-size: 16px;
-}
-
-.controls-container {
-  display: flex;
-  align-items: center; /* Align arrows and button vertically */
-  gap: 10px; /* Space between arrows and button */
-  margin-left: 20%;
-}
-
-.custom-arrows {
-  display: flex;
-  gap: 8px;
-}
-
-.custom-arrows button {
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 8px;
-}
-
-.view-more-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.view-more-button:hover {
-  background-color: #0056b3;
-}
-
-.seasonal-carousel .seasonal-item {
-  padding: 10px; /* Reduce padding around items */
-  text-align: center;
-}
-
-.seasonal-item img {
-  width: 100%; /* Adjust to fill container */
-  max-width: 150px; /* Ensure images don’t exceed this width */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 10px;
-}
-
-/* Media queries for responsive design */
-@media (max-width: 768px) {
+    text-align: center;
+  }
+  
   .header {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    display: flex;
+    justify-content: space-between; /* Center align header content */
+    align-items: center;
+    gap: 160px; /* Space between items in the header */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    
   }
-
+  .header p{
+    font-size: 16px;
+  }
+  
+  .controls-container {
+    display: flex;
+    align-items: center; /* Align arrows and button vertically */
+    gap: 20px; /* Space between arrows and button */
+    margin-left: 20%;
+  }
+  
   .custom-arrows {
-    margin-bottom: 10px; /* Add space below arrows on small screens */
+    display: flex;
+    gap: 10px;
   }
-
-  .view-more-button {
-    margin-top: 10px; /* Space between button and arrows */
-  }
-
-  .seasonal-item img {
-    max-width: 100px; /* Adjust image size for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .view-more-button {
-    padding: 8px 16px; /* Adjust button padding for very small screens */
-    font-size: 14px; /* Smaller font size */
-  }
-
+  
   .custom-arrows button {
-    font-size: 14px; /* Smaller arrow size */
-    padding: 6px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px;
   }
-}
+  
+  .view-more-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+  
+  .view-more-button:hover {
+    background-color: #0056b3;
+  }
 
-
+  .seasonal-item{
+    padding: 2%;
+    border-radius: 8px;
+    background-color: hwb(0 100% 0%);
+    flex-shrink: 0;
+    width: 40%;
+    height: 50%;
+    display: flex;
+    margin-left: 5%;
+  }
+  .seasonal-item img{
+    padding-left: 5%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .Seasonal-shopnow{
+    padding: 12px 40px;
+    background-color: #fcfdfe;
+    color: rgb(52, 54, 202);
+    border: 1px solid blue;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: auto; 
+  }
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .custom-arrows {
+      margin-bottom: 10px; /* Add space below arrows on small screens */
+    }
+  
+    .view-more-button {
+      margin-top: 10px; /* Space between button and arrows */
+    }
+  
+    .seasonal-item img {
+      max-width: 100px; /* Adjust image size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .view-more-button {
+      padding: 8px 16px; /* Adjust button padding for very small screens */
+      font-size: 14px; /* Smaller font size */
+    }
+  
+    .custom-arrows button {
+      font-size: 14px; /* Smaller arrow size */
+      padding: 6px;
+    }
+  }

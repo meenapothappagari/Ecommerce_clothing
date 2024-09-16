@@ -62,7 +62,7 @@ function BestSellers({ products }) {
   const navigate = useNavigate();
 
   const womensClothing = products.filter((product) =>
-    product.product_category_tree[0].includes('Women')
+    product.product_category_tree[0].includes('Kitchen & Dining')
   );
 
   const displayedProducts = viewMore ? womensClothing : womensClothing.slice(0, 3);

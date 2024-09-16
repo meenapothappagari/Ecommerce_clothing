@@ -1,0 +1,97 @@
+/* NewCollection.css */
+
+.NewCollection {
+    padding: 20px;
+    background-color: rgb(245, 249, 249);
+}
+.NewCollection h2{
+    color: rgb(8, 8, 8);
+}
+.NewCollection-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    justify-content: center;
+    background-color: white(227, 229, 230);
+}
+
+.NewCollection-item {
+    border: 1px solid #f9d7d7;
+    padding: 10px;
+    border-radius: 8px;
+    background:linear-gradient( rgb(255, 255, 255),rgb(241, 238, 238));
+    flex-shrink: 0;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.NewCollection-view{
+    background-color: blue;
+}
+.NewCollection-myimage {
+    width: 50%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.NewCollection-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.NewCollection-myretailprice {
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.NewCollection-price {
+    margin-top: auto;
+    display: flex;
+    gap: 16px;
+}
+
+.NewCollection-shopnow {
+    padding: 12px 40px;
+    background-color: #fcfdfe;
+    color: rgb(52, 54, 202);
+    border: 1px solid blue;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.NewCollection-shopnow:hover {
+    background-color: #accced;
+}
+
+.NewCollection-view:hover {
+    background-color: rgb(2, 2, 83);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .NewCollection-carousel {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+}
+
+.NewCollection-view {
+    padding: 13px 23px;
+    background-color: #228ffd;
+    color: rgb(253, 252, 252);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.NewCollection-best {
+    display: flex;
+    justify-content: space-between;
+}
