@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
@@ -25,7 +22,6 @@ import OrderSummaryPage from './components/OrderSummaryPage';
 import ContactPage from './components/ContactPage';
 import HelpPage from './components/HelpPage';
 import CustomerServicePage from './components/CustomerServicePage';
-// import HomePage from './components/HomePage';
 import ServicesPage from './components/ServicesPage';
 import ShopPage from './components/ShopPage';
 import Billing from './components/Billing';
@@ -41,11 +37,6 @@ function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [latestCategory, setLatestCategory] = useState(null);
-
-
-  // const addToCart = () => setCartCount(cartCount + 1);
-  // const removeFromCart = () => setCartCount(cartCount > 0 ? cartCount - 1 : 0);
-
 
   const addToCart = (product) => {
     const existingItem = cartItems.find(item => item._id === product._id);
@@ -172,14 +163,8 @@ function App() {
           <Route path="/category/footwear" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Footwear'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/watches" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Watches'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/pet-supplies" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Pet-Supplies'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          {/* <Route path="/category/stationery" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Stationery'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
           <Route path="/category/Sunglasses" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Sunglasses'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/Computers" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Computers'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          {/* <Route path="/category/Food & Nutrition" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Food & Nutrition'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
-          {/* <Route path="/category/Escan Lace Up" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Escan Lace Up'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
-          {/* <Route path="/category/Kitchen & Dining" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Kitchen & Dining'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
-
-
         </Routes>
         <Footer />
       </div>

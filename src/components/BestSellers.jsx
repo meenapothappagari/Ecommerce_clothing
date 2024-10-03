@@ -16,9 +16,6 @@ function BestSellers({ products }) {
 
   const handleToggleView = () => setViewMore(!viewMore);
 
-  // const handleShopNow = (product) => {
-  //   navigate('/product-details', { state: { product } });
-  // };
   const handleShopNow = (product) => {
     navigate('/product-details', { state: { product } });
   };
