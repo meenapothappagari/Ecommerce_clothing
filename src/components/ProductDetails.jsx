@@ -206,7 +206,9 @@ const ProductDetails = ({ cartCount, setCartCount, addToCart }) => {
           <img src={parsedImages[0]} alt={product.product_name} className="main-image" />
         </div>
         <div className='butn'>
+          {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
           <button onClick={() => addToCart(product)}>Add to Cart</button>
+
           <button onClick={removeFromCart}>Remove from Cart</button>
         </div>
       </div>

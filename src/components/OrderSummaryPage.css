@@ -1,0 +1,120 @@
+.order-summary-page {
+    max-width: 800px; /* Adjusted for smaller screens */
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10);
+    cursor: pointer;
+    margin-bottom: 40px;
+  }
+  
+  .delivery{
+    display: flex;
+  }
+  .order-summary-page h2 {
+    color: #333;
+    width: max-content;
+    background-color: rgb(209, 242, 250);
+    padding: 6px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Larger font for better visibility */
+  }
+  
+  .address-details,
+  .cart-summary {
+    margin-bottom: 20px;
+  }
+  
+  .address-details p,
+  .cart-item {
+    margin: 5px 0;
+  }
+  
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    column-gap: -40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    flex-direction: column; /* Stacked layout for mobile */
+  }
+  
+  .cart-item-image {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 50px; /* Limit max size */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    /* margin-left: 25%; */
+  }
+  
+  .cart-item-details {
+    text-align: center; /* Center align text for mobile */
+    margin-left: -20%;
+  }
+  
+  .confirm-delivery-button,
+  .proceed-to-pay-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: max-content; /* Full width buttons */
+  }
+  
+  .confirm-delivery-button:hover {
+    background-color: #0056b3;
+  }
+  .proceed-to-pay-button{
+    background-color: rgb(254, 158, 40);
+    color: #000f;
+  }
+  .proceed-to-pay-button:hover{
+    background-color: darkorange;
+  }
+  .checkoutbtn{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .confirmed {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center; /* Center align for mobile */
+  }
+  
+  h3 {
+    color: #333;
+    text-align: center; /* Center align for mobile */
+  }
+  
+  /* Media Queries for larger screens */
+  @media (min-width: 768px) {
+    .cart-item {
+      flex-direction: row; /* Row layout for larger screens */
+    }
+  
+    .cart-item-image {
+      max-width: 80px; /* Maintain size for larger screens */
+    }
+  
+    .cart-item-details {
+      text-align: left; /* Left align for larger screens */
+    }
+  }
+  
+  
+
+  

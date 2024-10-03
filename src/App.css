@@ -6,7 +6,12 @@
   padding: 20px;
   background-color: #f2f4f5;
 }
-
+.App {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
 /* Individual Product Item */
 .product-item {
    background-color: #f9f9f9;

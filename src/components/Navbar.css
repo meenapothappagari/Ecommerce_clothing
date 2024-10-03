@@ -89,8 +89,8 @@
 
 .cart-count {
   position: absolute;
-  top: -11px;
-  left: 10px;
+  top: 2px;
+  left: 27px;
   background-color: rgb(16, 13, 13);
   color: white;
   border-radius: 50%;
@@ -110,7 +110,10 @@
   cursor: pointer;
   font-size: 18px;
 }
-
+/* .search-btn{
+  color: rgb(244, 239, 239);
+  
+} */
 /* Modal */
 .modal {
   position: fixed;

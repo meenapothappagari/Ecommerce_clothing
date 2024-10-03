@@ -55,16 +55,16 @@
     margin-right: 35%; /* Adjusted margin for better alignment */
     margin-bottom: 3%;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 568px) {
     .fashion {
-      flex-direction: column; /* Stacks the content vertically on small screens */
+      flex-direction: row; /* Stacks the content vertically on small screens */
       text-align: center;
     }
   
     .fashion img {
       width: 100px;
       height: 100px;
-      margin-right: 0;
+      /* margin-right: 0; */
     }
   
     .product-list {

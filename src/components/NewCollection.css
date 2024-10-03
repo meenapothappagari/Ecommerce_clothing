@@ -13,14 +13,14 @@
     gap: 20px;
     padding: 20px 0;
     justify-content: center;
-    background-color: white(227, 229, 230);
+    background-color:rgb(245, 255, 255);
 }
 
 .NewCollection-item {
-    border: 1px solid #f9d7d7;
-    padding: 10px;
+    border: 0.6px solid #f9d7d7;
+    padding: 1px;
     border-radius: 8px;
-    background:linear-gradient( rgb(255, 255, 255),rgb(241, 238, 238));
+    background:linear-gradient(white,rgb(237, 235, 235));
     flex-shrink: 0;
     width: 450px;
     display: flex;
@@ -31,11 +31,12 @@
     background-color: blue;
 }
 .NewCollection-myimage {
-    width: 50%;
+    width: 55%;
     height: auto;
-    max-height: 300px;
+    max-height: 250px;
     object-fit: cover;
     margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 .NewCollection-item:hover {

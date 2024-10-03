@@ -196,7 +196,7 @@ const Navbar = ({ cartCount, onSearch }) => {
                 placeholder="Search products..."
                 autoFocus
               />
-              <button type="submit" className="search-btn">Search</button>
+              {/* <button type="submit" className="search-btn">Search</button> */}
             </form>
           )}
         </div>

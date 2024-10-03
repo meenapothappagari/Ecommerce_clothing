@@ -84,7 +84,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './BestSellers.css'; // Reuse the same CSS from BestSellers
+import './Stationery.css'; // Reuse the same CSS from BestSellers
 
 const Stationery = ({ products }) => {
   const [viewMore, setViewMore] = useState(false);
@@ -92,12 +92,12 @@ const Stationery = ({ products }) => {
 
   // Filter for Stationery category
   const stationeryProducts = products.filter((product) =>
-    product.product_category_tree?.[0]?.includes('Stationery')
+    product.product_category_tree?.[0]?.includes('Computers')
   );
 
   const displayedProducts = viewMore
     ? stationeryProducts
-    : stationeryProducts.slice(0, 3);
+    : stationeryProducts.slice(0, 4);
 
   const handleToggleView = () => setViewMore(!viewMore);
 
@@ -106,27 +106,27 @@ const Stationery = ({ products }) => {
   };
 
   return (
-    <div className="best-sellers">
+    <div className="stationery">
       <div className="best">
-        <h2>Our Best Stationery Products</h2>
-        <button onClick={handleToggleView} className="view">
+        <h2>Our Best Products</h2>
+        <button onClick={handleToggleView} className="stationery-view">
           {viewMore ? 'View Less' : 'View More'}
         </button>
       </div>
 
-      <div className="carousel">
+      <div className="stationery-carousel">
         {displayedProducts.map((product) => (
-          <div key={product._id} className="item">
+          <div key={product._id} className="stationery-item">
             <img
               src={JSON.parse(product.image)[0]}
               alt={product.product_name}
-              className="myimage"
+              className="stationery-myimage"
             />
             <h3>{product.product_name}</h3>
-            <div className='price'>
-              <p className="myretailprice">Retail Price: ₹{product.retail_price}</p>
+            <div className='stationery-price'>
+              <p className="stationery-myretailprice">Retail Price: ₹{product.retail_price}</p>
               <button
-                className="shopnow"
+                className="stationery-shopnow"
                 onClick={() => handleShopNow(product)}
               >
                 Shop Now

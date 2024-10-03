@@ -4,7 +4,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
-import HomePage from './components/HomePage';
 import ProductDetails from './components/ProductDetails';
 import PopularCategories from './components/PopularCategories';
 import SeasonalPicks from './components/SeasonalPicks';
@@ -21,7 +20,16 @@ import Fashion from './components/Fashion';
 import BestSellers from './components/BestSellers';
 import NewCollection from './components/NewCollection';
 import SearchResultsPage from './components/SearchResultsPage';
+import AddressPage from './components/AddressPage';
+import OrderSummaryPage from './components/OrderSummaryPage';
+import ContactPage from './components/ContactPage';
+import HelpPage from './components/HelpPage';
+import CustomerServicePage from './components/CustomerServicePage';
+// import HomePage from './components/HomePage';
+import ServicesPage from './components/ServicesPage';
+import ShopPage from './components/ShopPage';
 import Billing from './components/Billing';
+
 import './App.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -32,20 +40,55 @@ function App() {
   const [category, setCategory] = useState('all');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [latestCategory, setLatestCategory] = useState(null);
+
 
   // const addToCart = () => setCartCount(cartCount + 1);
   // const removeFromCart = () => setCartCount(cartCount > 0 ? cartCount - 1 : 0);
 
+
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+    const existingItem = cartItems.find(item => item._id === product._id);
+
+    if (existingItem) {
+      const updatedCart = cartItems.map(item =>
+        item._id === product._id
+          ? { ...item, quantity: (item.quantity || 1) + 1 }
+          : item
+      );
+      setCartItems(updatedCart);
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+
     setCartCount(cartCount + 1);
+
+    // Set the category of the latest added product
+    setLatestCategory(product.product_category_tree[0]); // Assuming category is in this format
   };
+
+  const updateQuantity = (itemId, newQuantity) => {
+    if (newQuantity < 1) return; // Prevent quantity from being less than 1
+    const updatedCart = cartItems.map(item =>
+      item._id === itemId ? { ...item, quantity: newQuantity } : item
+    );
+    setCartItems(updatedCart);
+  
+    // Calculate the total quantity of items in the cart
+    const totalItemsCount = updatedCart.reduce((acc, item) => acc + (item.quantity || 1), 0);
+    setCartCount(totalItemsCount);  // Update the cart count here
+  };
+  
 
   const removeFromCart = (productId) => {
     const updatedCart = cartItems.filter(item => item._id !== productId);
     setCartItems(updatedCart);
     setCartCount(updatedCart.length);
   };
+
+
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -78,63 +121,73 @@ function App() {
     <Router>
       <div className="App">
         <Navbar cartCount={cartCount} onSearch={handleSearch} products={products} />
-        <Fashion />
-       
+
+
 
         <Routes>
-          <Route path="/product-details" element={<ProductDetails />} />
-          <Route path="*" element={<HomePage />} />
+          {/* <Route path="/product-details" element={<ProductDetails />} /> */}
+          {/* <Route path="*" element={<HomePage />} /> */}
+          <Route path="/product-details" element={<ProductDetails addToCart={addToCart} cartCount={cartCount} setCartCount={setCartCount} />} />
           <Route path="/search-results" element={<SearchResultsPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/cart" element={<CartPage cartItems={cartItems} removeFromCart={removeFromCart} updateQuantity={updateQuantity} totalPrice={totalPrice} />} />
+          <Route path="/address" element={<AddressPage cartItems={cartItems} totalPrice={totalPrice} />} />
+          <Route path="/order-summary" element={<OrderSummaryPage />} />
+          <Route path="/billing" element={<Billing />} />
+
 
 
           <Route
             path="/"
             element={
               <>
-                <HomePage />
-                {/* <Billing/> */}
+                <Fashion />
                 <PopularCategories setCategory={setCategory} />
-                <BestSellers products={products} />
-                <NewCollection products={products} />
                 <SeasonalPicks products={products} />
+                <BestSellers products={products} />
                 <Stationery products={filteredProducts} />
-                <BestSellers products={filteredProducts} />
                 <NewCollection products={filteredProducts} />
                 <WhyChooseUs />
                 <OurClients />
                 <SocialMedia />
-                <Footer />
               </>
             }
           />
+          {/* Static Pages */}
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/help" element={<HelpPage />} />
+          <Route path="/customer-service" element={<CustomerServicePage />} />
 
-          {/* Category Routes */}
-          <Route path="/category/men" element={<ProductListing products={filteredProducts.filter(product => product.product_category_tree[0].includes('Men'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          <Route path="/category/women" element={<ProductListing products={filteredProducts.filter(product => product.product_category_tree[0].includes('Women'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
+
+          <Route path="/category/men" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Men'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
+
+          <Route path="/category/Sports & Fitness" element={<ProductListing products={filteredProducts.filter(product => product.product_category_tree[0].includes('Sports & Fitness'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
+          <Route path="/category/women" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Women'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/children" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Boys') || product.product_category_tree[0].includes('Girls'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/clothing" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Clothing'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/furniture" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Furniture'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/footwear" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Footwear'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/watches" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Watches'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
           <Route path="/category/pet-supplies" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Pet-Supplies'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          <Route path="/category/stationery" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Stationery'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          <Route path="/category/jewellery" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Jewellery'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          {/* <Route path="/category/watches" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('watches'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
-           <Route path="/category/Food & Nutrition" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Food & Nutrition'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          <Route path="/category/Escan Lace Up" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Escan Lace Up'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
-          {/* <Route path="/category/Kitchen & Dining" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Kitchen & Dining'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */} 
+          {/* <Route path="/category/stationery" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Stationery'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
+          <Route path="/category/Sunglasses" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Sunglasses'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
+          <Route path="/category/Computers" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Computers'))} addToCart={addToCart} removeFromCart={removeFromCart} />} />
+          {/* <Route path="/category/Food & Nutrition" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Food & Nutrition'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
+          {/* <Route path="/category/Escan Lace Up" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Escan Lace Up'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
+          {/* <Route path="/category/Kitchen & Dining" element={<ProductListing products={products.filter(product => product.product_category_tree[0].includes('Kitchen & Dining'))} addToCart={addToCart} removeFromCart={removeFromCart} />} /> */}
 
 
         </Routes>
+        <Footer />
       </div>
     </Router>
 
   );
 }
-
-function ProductListing({ products }) {
+function ProductListing({ products, addToCart, removeFromCart }) {
   const navigate = useNavigate();
 
   const goToProductDetails = (product) => {
@@ -155,6 +208,7 @@ function ProductListing({ products }) {
             <h3>{product.product_name}</h3>
             <p><strong>Retail Price:</strong> ₹{product.retail_price}</p>
             <p><strong>Discounted Price:</strong> ₹{product.discounted_price}</p>
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
           </div>
         ))
       ) : (
@@ -166,7 +220,4 @@ function ProductListing({ products }) {
 
 export default App;
 
-
-
-////////////////////////////////////////////////////////////////////
 

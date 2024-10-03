@@ -170,7 +170,7 @@ const SeasonalPicks = ({ products }) => {
 
   // Filter for Jewellery category and display all products
   const sportsProducts = products.filter(
-    (product) => product.product_category_tree?.[0]?.includes('Furniture')
+    (product) => product.product_category_tree?.[0]?.includes('Sunglasses')
   );
 
   // Slider settings to enable horizontal scrolling
@@ -205,13 +205,13 @@ const SeasonalPicks = ({ products }) => {
           that have been bought for interested people
         </p>
 
-        <div className="controls-container">
-          <div className="custom-arrows">
-            <button className="prev-arrow" onClick={handlePrev}>←</button>
-            <button className="next-arrow" onClick={handleNext}>→</button>
+        <div className="seasonal-controls-container">
+          <div className="seasonal-custom-arrows">
+            <button className="seasonal-prev-arrow" onClick={handlePrev}>←</button>
+            <button className="seasonal-next-arrow" onClick={handleNext}>→</button>
           </div>
-          <Link to="/category/Furniture">
-            <button className="view-more-button">View More</button>
+          <Link to="/category/Sunglasses">
+            <button className="seasonal-view-more-button">View More</button>
           </Link>
         </div>
       </div>
@@ -220,10 +220,13 @@ const SeasonalPicks = ({ products }) => {
           <div key={product._id} className="seasonal-item">
             <img src={JSON.parse(product.image)[0]} alt={product.product_name} />
             <h3>{product.product_name}</h3>
-            <p>₹{product.retail_price}</p>
-            <button className="Seasonal-shopnow" onClick={() => handleShopNow(product)}>
-              Shop Now
-            </button>
+            <div className='priceprod'>
+              <p>₹{product.retail_price}</p>
+              <button className="Seasonal-shopnow" onClick={() => handleShopNow(product)}>
+                Shop Now
+              </button>
+            </div>
+
           </div>
         ))}
       </Slider>

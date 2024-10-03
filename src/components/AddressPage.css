@@ -1,0 +1,180 @@
+/* .address-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f1f2f4;
+    min-height: 100vh;
+  }
+  
+  .address-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin-right: 20px;
+  }
+  
+  .current-location-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .address-form input,
+  .address-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .address-type {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .save-btn {
+    background-color: #ff6a00;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .price-details {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  .price-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .price-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .price-details hr {
+    border: 1px solid #eee;
+    margin: 15px 0;
+  }
+  
+  /* Responsive for mobile */
+  /* @media (max-width: 768px) {
+    .address-page {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .address-form {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .price-details {
+      width: 100%;
+    }
+  } */
+
+  
+.address-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .address-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .submit-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #2874f0; /* Flipkart blue */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #1f62d2;
+  }
+  
+  .response-message {
+    margin-top: 20px;
+    color: #e74c3c;
+  }
+  
